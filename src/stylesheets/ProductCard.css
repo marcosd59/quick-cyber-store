@@ -1,0 +1,8 @@
+/* Estilos CSS */
+.stars-container {
+  display: flex; /* Alineación horizontal */
+}
+
+.star {
+  margin-right: 5px; /* Espacio entre las estrellas */
+}
