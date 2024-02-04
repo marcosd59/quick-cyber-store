@@ -8,7 +8,6 @@ import Chip from "@mui/joy/Chip";
 import Link from "@mui/joy/Link";
 import Typography from "@mui/joy/Typography";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-// import accounting from "accounting";
 import "../stylesheets/ProductCard.css";
 
 export default function ProductCard() {
