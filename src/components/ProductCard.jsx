@@ -9,22 +9,22 @@ import Link from "@mui/joy/Link";
 import Typography from "@mui/joy/Typography";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import "../stylesheets/ProductCard.css";
+import StarIcon from "@mui/icons-material/Star";
 
-export default function ProductCard() {
+export default function ProductCard({
+  product: { name, price, rating, stock, description, image },
+}) {
+  const starIcons = Array(Math.floor(rating)).fill(<StarIcon />);
+
   return (
     <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
       <CardOverflow>
         <AspectRatio sx={{ minWidth: 200 }}>
-          <img
-            src="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286"
-            srcSet="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286&dpr=2 2x"
-            loading="lazy"
-            alt=""
-          />
+          <img src={image} loading="lazy" alt="Imagen del producto" />
         </AspectRatio>
       </CardOverflow>
       <CardContent>
-        <Typography level="body-xs">Bluetooth Headset</Typography>
+        <Typography level="body-xs">QuickCyber</Typography>
         <Link
           href="#product-card"
           fontWeight="md"
@@ -33,9 +33,8 @@ export default function ProductCard() {
           overlay
           endDecorator={<ArrowOutwardIcon />}
         >
-          Super Rockez A400
+          {name}
         </Link>
-
         <Typography
           level="title-lg"
           sx={{ mt: 1, fontWeight: "xl" }}
@@ -45,21 +44,17 @@ export default function ProductCard() {
             </Chip>
           }
         >
-          499.99 MXN
+          {price} MXN
         </Typography>
-
         <div className="stars-container">
-          {Array(4)
-            .fill()
-            .map((_, i) => (
-              <p key={i} className="star">
-                ⭐
-              </p>
-            ))}
+          {starIcons.map((star, i) => (
+            <div key={i} className="star">
+              {star}
+            </div>
+          ))}
         </div>
-
         <Typography level="body-sm">
-          (Only <b>7</b> left in stock!)
+          (Only <b>{stock}</b> left in stock!)
         </Typography>
       </CardContent>
       <CardOverflow>
