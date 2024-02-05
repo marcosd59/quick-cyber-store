@@ -5,18 +5,18 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import CheckoutCard from "./CheckoutCard";
 import Button from "@mui/joy/Button";
-import productos from "../product-data";
 import "../stylesheets/ProductCard.css";
+import { useStateValue } from "../StateProvider";
 
 const TitleGrid = styled(Grid)(({ theme }) => ({
   padding: theme.spacing(2),
   textAlign: "center",
 }));
 
-const ProductsGrid = styled(Grid)(({ theme }) => ({
-  padding: theme.spacing(2),
-  textAlign: "center",
-}));
+// const ProductsGrid = styled(Grid)(({ theme }) => ({
+//   padding: theme.spacing(2),
+//   textAlign: "center",
+// }));
 
 const TotalGrid = styled(Grid)(({ theme }) => ({
   padding: theme.spacing(2),
@@ -34,13 +34,18 @@ const Item = styled("div")(({ theme }) => ({
 export default function CheckoutPage() {
   const calculateTotalPrice = () => {
     // Función para calcular el precio total de los productos
-    return productos.reduce((total, product) => total + product.price, 0);
+    const totalPrice = basket?.reduce(
+      (total, product) => total + product.price,
+      0
+    );
+    return totalPrice.toFixed(2); // Redondear a 2 decimales
   };
 
+  const [{ basket }, dispatch] = useStateValue();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <TitleGrid item xs={12}>
           {/* Primer Grid con el título "Shopping Cart" */}
           <Typography
             variant="h4"
@@ -52,16 +57,14 @@ export default function CheckoutPage() {
               alignItems: "center",
               justifyContent: "center",
               paddingTop: "50px",
-              paddingLeft: "50px",
-              paddingRight: "auto",
             }}
           >
             Shopping Cart
           </Typography>
-        </Grid>
+        </TitleGrid>
         {/* Segundo Grid con los productos */}
 
-        {productos.map((product) => (
+        {basket?.map((product) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
             <Item>
               <CheckoutCard product={product} />
@@ -71,7 +74,14 @@ export default function CheckoutPage() {
 
         {/* Tercer Grid con el Total */}
         <TotalGrid item xs={12}>
-          <Button variant="solid" color="success" size="lg">
+          <Button
+            variant="solid"
+            color="success"
+            size="lg"
+            style={{
+              fontSize: "24px",
+            }}
+          >
             Total: {calculateTotalPrice()} MXN
           </Button>
         </TotalGrid>
