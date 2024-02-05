@@ -10,11 +10,36 @@ import Typography from "@mui/joy/Typography";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import "../stylesheets/ProductCard.css";
 import StarIcon from "@mui/icons-material/Star";
+import { actionTypes } from "../reducer";
+import { useStateValue } from "../StateProvider";
+import uuid from "react-uuid";
 
 export default function ProductCard({
-  product: { name, price, rating, stock, description, image },
+  product: { id, name, price, rating, stock, description, image },
 }) {
   const starIcons = Array(Math.floor(rating)).fill(<StarIcon />);
+
+  const [{ basket }, dispatch] = useStateValue();
+  const [availableStock, setAvailableStock] = React.useState(stock);
+
+  const addToBasket = () => {
+    if (availableStock > 0) {
+      dispatch({
+        type: actionTypes.ADD_TO_BASKET,
+        item: {
+          id: uuid(),
+          name,
+          image,
+          price,
+          rating,
+          stock: availableStock - 1,
+          description,
+        },
+      });
+      setAvailableStock((prevStock) => prevStock - 1); // Actualizamos el stock en el estado local
+      console.log(availableStock);
+    }
+  };
 
   return (
     <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
@@ -54,11 +79,11 @@ export default function ProductCard({
           ))}
         </div>
         <Typography level="body-sm">
-          (Only <b>{stock}</b> left in stock!)
+          (Only <b>{availableStock}</b> left in stock!)
         </Typography>
       </CardContent>
       <CardOverflow>
-        <Button variant="solid" color="primary" size="lg">
+        <Button variant="solid" color="primary" size="lg" onClick={addToBasket}>
           Add to cart
         </Button>
       </CardOverflow>
