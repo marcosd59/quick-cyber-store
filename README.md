@@ -52,4 +52,4 @@ https://github.com/marcosd59/quick-cyber-store
 
 ## Contribuciones
 
-Alexis Rodriguez Ramon | https://github.com/Al3xR
+Alexis Rodriguez Ramon https://github.com/Al3xR
