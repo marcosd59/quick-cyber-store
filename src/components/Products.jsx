@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import ProductCard from "./ProductCard";
 import productos from "../product-data";
+// import uuid from "react-uuid";
 
 const Item = styled("div")(({ theme }) => ({
   padding: theme.spacing(4),
