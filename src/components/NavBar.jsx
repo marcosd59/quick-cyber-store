@@ -9,17 +9,25 @@ import logo from "../img/solo_logo.png";
 import { ClassNames } from "@emotion/react";
 import { ShoppingCart } from "@mui/icons-material";
 import { Badge } from "@mui/material";
+import { Link } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
+import "../stylesheets/NavBar.css";
 
 export default function NavBar() {
+  const [{ basket }, dispatch] = useStateValue();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
-          <img
-            src={logo}
-            alt="logo"
-            style={{ width: "70px", height: "70px" }}
-          />
+          <Link to="/">
+            <IconButton>
+              <img
+                src={logo}
+                alt="logo"
+                style={{ width: "70px", height: "70px" }}
+              />
+            </IconButton>
+          </Link>
           <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
             QuickCyber Store
           </Typography>
@@ -35,14 +43,18 @@ export default function NavBar() {
             <Button color="inherit" variant="outlined">
               <strong>Sign In</strong>
             </Button>
-            <IconButton aria-label="show cart items" color="inherit">
-              <Badge badgeContent={2} color="secondary">
-                <ShoppingCart fontSize="large" />
-              </Badge>
-            </IconButton>
+            <Link to="/checkout-page">
+              <IconButton aria-label="show cart items" color="inherit">
+                <Badge badgeContent={basket?.length} color="secondary">
+                  <ShoppingCart fontSize="large" />
+                </Badge>
+              </IconButton>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
+      <div style={{ height: "50px" }}></div>
+      <div style={{ marginTop: "50px" }}>{/* Contenido de los objetos */}</div>
     </Box>
   );
 }
