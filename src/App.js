@@ -1,18 +1,20 @@
-import { Check } from "@mui/icons-material";
 import "./App.css";
 import NavBar from "./components/NavBar";
-// import ProductCard from "./components/ProductCard";
-// import Products from "./components/Products";
+import Products from "./components/Products";
 import CheckoutPage from "./components/CheckoutPage";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      {/* <Products /> */}
-      {/* <ProductCard /> */}
-      <CheckoutPage />
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/checkout-page" element={<CheckoutPage />} />
+          <Route path="/" element={<Products />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
