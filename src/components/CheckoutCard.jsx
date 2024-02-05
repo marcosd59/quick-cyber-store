@@ -9,11 +9,16 @@ import Typography from "@mui/joy/Typography";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import "../stylesheets/ProductCard.css";
 import StarIcon from "@mui/icons-material/Star";
+import { useStateValue } from "../StateProvider";
+import { actionTypes } from "../reducer";
 
 export default function CheckoutCard({
-  product: { name, price, rating, stock, description, image },
+  product: { id, name, price, rating, stock, description, image },
 }) {
   const starIcons = Array(Math.floor(rating)).fill(<StarIcon />);
+  const [{ basket }, dispatch] = useStateValue();
+  const removeItem = () =>
+    dispatch({ type: actionTypes.REMOVE_FROM_BASKET, id });
 
   return (
     <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
@@ -45,7 +50,7 @@ export default function CheckoutCard({
         </div>
       </CardContent>
       <CardOverflow>
-        <Button variant="solid" color="danger" size="lg">
+        <Button variant="solid" color="danger" size="lg" onClick={removeItem}>
           Delete
         </Button>
       </CardOverflow>
