@@ -30,6 +30,7 @@ Asegúrate de tener instaladas las siguientes dependencias:
 "@testing-library/react": "^13.4.0",
 "@testing-library/user-event": "^13.5.0",
 "accounting": "^0.4.1",
+"firebase": "^10.8.0",
 "react": "^18.2.0",
 "react-dom": "^18.2.0",
 "react-router-dom": "^6.22.0",
@@ -39,10 +40,31 @@ Asegúrate de tener instaladas las siguientes dependencias:
 "web-vitals": "^2.1.4"
 ```
 
-## Capturas de Pantalla
+## Capturas de pantalla
 
-![Captura de Pantalla 1](https://github.com/marcosd59/quick-cyber-store/blob/master/src/img/Captura%20de%20pantalla%202024-02-05%20082801.png?raw=true)
-![Captura de Pantalla 2](https://github.com/marcosd59/quick-cyber-store/blob/master/src/img/Captura%20de%20pantalla%202024-02-05%20082816.png?raw=true)
+### Página principal
+
+![Paginas principla](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20131820.png)
+
+### Carrito de compras
+
+![Carrito de compra](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20131952.png)
+
+### Login
+
+![Login](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20132046.png)
+
+### Register
+
+![Register](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20132137.png)
+
+### Checkout
+
+![Checkout](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20132343.png)
+
+### Dark mode
+
+![Dark mode](./src/img/screenshots//Captura%20de%20pantalla%202024-02-19%20132549.png)
 
 ## Clonar este repositorio
 
@@ -50,6 +72,12 @@ Asegúrate de tener instaladas las siguientes dependencias:
 https://github.com/marcosd59/quick-cyber-store
 ```
 
-## Contribuciones
+## Integrantes
 
-Alexis Rodriguez Ramon https://github.com/Al3xR
+[Marcos Damián Pool Canul](https://github.com/marcosd59)
+
+[Alexis Rodriguez Ramon](https://github.com/Al3xR)
+
+## Documentación
+
+[QuickCyber Store](./Documentación.pdf)
