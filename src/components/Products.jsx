@@ -7,7 +7,7 @@ import productos from "../product-data";
 // import uuid from "react-uuid";
 
 const Item = styled("div")(({ theme }) => ({
-  padding: theme.spacing(4),
+  padding: theme.spacing(2),
   textAlign: "left",
   display: "flex",
   justifyContent: "center",
