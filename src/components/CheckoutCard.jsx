@@ -21,7 +21,9 @@ export default function CheckoutCard({
     dispatch({ type: actionTypes.REMOVE_FROM_BASKET, id });
 
   return (
-    <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
+    <Card
+      sx={{ width: 320, maxWidth: "100%", boxShadow: "lg", minHeight: "400px" }}
+    >
       <CardOverflow>
         <AspectRatio sx={{ minWidth: 200 }}>
           <img src={image} loading="lazy" alt="Imagen del producto" />
@@ -39,7 +41,7 @@ export default function CheckoutCard({
           {name}
         </Link>
         <Typography level="title-lg" sx={{ mt: 1, fontWeight: "xl" }}>
-          {price} MXN
+          ${price} MXN
         </Typography>
         <div className="stars-container">
           {starIcons.map((star, i) => (
