@@ -42,7 +42,16 @@ export default function ProductCard({
   };
 
   return (
-    <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
+    <Card
+      sx={{
+        width: 320,
+        maxWidth: "100%",
+        boxShadow: "lg",
+        minHeight: "450px",
+        border: "2px solid white",
+        // backgroundColor: "blueGray.50",
+      }}
+    >
       <CardOverflow>
         <AspectRatio sx={{ minWidth: 200 }}>
           <img src={image} loading="lazy" alt="Imagen del producto" />
@@ -69,7 +78,7 @@ export default function ProductCard({
             </Chip>
           }
         >
-          {price} MXN
+          ${price} MXN
         </Typography>
         <div className="stars-container">
           {starIcons.map((star, i) => (
@@ -83,7 +92,18 @@ export default function ProductCard({
         </Typography>
       </CardContent>
       <CardOverflow>
-        <Button variant="solid" color="primary" size="lg" onClick={addToBasket}>
+        <Button
+          variant="solid"
+          size="lg"
+          onClick={addToBasket}
+          sx={{
+            backgroundColor: "#212F77",
+            color: "white",
+            "&:hover": {
+              backgroundColor: "darken(#212F77, 0.5)",
+            },
+          }}
+        >
           Add to cart
         </Button>
       </CardOverflow>
