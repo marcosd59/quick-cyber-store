@@ -107,7 +107,15 @@ function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{
+                mt: 3,
+                mb: 2,
+                backgroundColor: "#212F77",
+                color: "white",
+                "&:hover": {
+                  backgroundColor: "darken(#212F77, 0.5)",
+                },
+              }}
             >
               Sign Up
             </Button>
