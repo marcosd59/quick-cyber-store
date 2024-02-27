@@ -3,3 +3,17 @@
 .navbar {
   margin-bottom: 64px;
 }
+
+/* Ocultar el texto QuickCyber Store en pantallas menores de 450px */
+@media (max-width: 450px) {
+  .quickCyberStore {
+    display: none;
+  }
+}
+
+/* Ocultar el saludo Hello [user] en pantallas menores de 600px */
+@media (max-width: 600px) {
+  .greetingText {
+    display: none;
+  }
+}
