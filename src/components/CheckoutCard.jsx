@@ -22,7 +22,14 @@ export default function CheckoutCard({
 
   return (
     <Card
-      sx={{ width: 320, maxWidth: "100%", boxShadow: "lg", minHeight: "400px" }}
+      sx={{
+        width: 320,
+        maxWidth: "100%",
+        boxShadow: "lg",
+        minHeight: "400px",
+        border: "2px solid white",
+        // backgroundColor: "blueGray.50",
+      }}
     >
       <CardOverflow>
         <AspectRatio sx={{ minWidth: 200 }}>
