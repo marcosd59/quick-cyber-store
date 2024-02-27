@@ -7,7 +7,7 @@ import CheckoutCard from "./CheckoutCard";
 import Button from "@mui/joy/Button";
 import "../stylesheets/ProductCard.css";
 import { useStateValue } from "../StateProvider";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import Checkout from "./checkoutform/Checkout";
 
 const TitleGrid = styled(Grid)(({ theme }) => ({
@@ -53,7 +53,7 @@ export default function CheckoutPage() {
             variant="h4"
             style={{
               fontFamily: "Arial, sans-serif",
-              color: "black",
+              color: (theme) => theme.palette.text.primary,
               fontSize: "34px",
               display: "flex",
               alignItems: "center",
@@ -76,17 +76,19 @@ export default function CheckoutPage() {
 
         {/* Tercer Grid con el Total */}
         <TotalGrid item xs={12}>
-        <Link to="/Checkout"> {Checkout}
-          <Button
-            variant="solid"
-            color="success"
-            size="lg"
-            style={{
-              fontSize: "24px",
-            }}
-          > 
-            Total: {calculateTotalPrice()} MXN
-          </Button>
+          <Link to="/Checkout">
+            {" "}
+            {Checkout}
+            <Button
+              variant="solid"
+              color="success"
+              size="lg"
+              style={{
+                fontSize: "24px",
+              }}
+            >
+              Total: ${calculateTotalPrice()} MXN
+            </Button>
           </Link>
         </TotalGrid>
       </Grid>
