@@ -12,10 +12,29 @@ QuickCyber Store es una aplicación de comercio electrónico basada en la web co
 
 ## Cómo ejecutar la aplicación
 
-1. Clona este repositorio en tu máquina local.
-   [https://github.com/marcosd59/quick-cyber-store](https://github.com/marcosd59/quick-cyber-store)
-2. Abre una terminal en el directorio del proyecto y ejecuta `npm install` para instalar las dependencias.
-3. Ejecuta `npm start` para iniciar la aplicación en modo de desarrollo.
+1. Clona el repositorio en tu máquina local:
+
+   ```sh
+   git clone https://github.com/marcosd59/quick-cyber-store
+   ```
+
+2. Navega al directorio del proyecto:
+
+   ```sh
+   cd quick-cyber-store
+   ```
+
+3. Instala las dependencias necesarias:
+
+   ```sh
+   npm install
+   ```
+
+4. Inicia la aplicación:
+
+   ```sh
+   npm start
+   ```
 
 Asegúrate de tener instaladas las siguientes dependencias:
 
@@ -44,33 +63,52 @@ Asegúrate de tener instaladas las siguientes dependencias:
 
 ### Página principal
 
-![Paginas principla](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20131820.png)
+![Paginas principla](./src/img/screenshots/Pagina%20principal.png)
 
 ### Carrito de compras
 
-![Carrito de compra](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20131952.png)
+![Carrito de compra](./src/img/screenshots/Shopping%20cart.png)
 
 ### Login
 
-![Login](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20132046.png)
+![Login](./src/img/screenshots/Sign%20In.png)
 
 ### Register
 
-![Register](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20132137.png)
+![Register](./src/img/screenshots/Sign%20Up.png)
 
 ### Checkout
 
-![Checkout](./src/img/screenshots/Captura%20de%20pantalla%202024-02-19%20132343.png)
+![Checkout](./src/img/screenshots/Checkout.png)
 
 ### Dark mode
 
-![Dark mode](./src/img/screenshots//Captura%20de%20pantalla%202024-02-19%20132549.png)
+![Dark mode](./src/img/screenshots/Dark%20Mode.png)
 
 ## Clonar este repositorio
 
 ```bash
 https://github.com/marcosd59/quick-cyber-store
 ```
+
+## Tecnologías
+
+- [React](https://reactjs.org/)
+- [MUI Core v5](https://mui.com/)
+- [Netlify](https://www.netlify.com/)
+
+## Cómo contribuir
+
+Si tienes una sugerencia para mejorar este proyecto, por favor haz un fork del repositorio y crea una pull request. También puedes simplemente abrir un issue con la etiqueta "enhancement".
+¡No olvides dar una estrella al proyecto si te ha ayudado!
+
+Las contribuciones son lo que hacen a la comunidad de código abierto un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas será **enormemente apreciada**.
+
+1. Haz un Fork del proyecto
+2. Crea tu rama de característica (`git checkout -b feature/AmazingFeature`)
+3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Haz push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre una Pull Request
 
 ## Integrantes
 
