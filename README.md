@@ -41,8 +41,8 @@ Asegúrate de tener instaladas las siguientes dependencias:
 
 ## Capturas de Pantalla
 
-![Captura de Pantalla 1](https://github.com/marcosd59/quick-cyber-store/blob/master/src/img/Captura%20de%20pantalla%202024-02-05%20082801.png?raw=true)
-![Captura de Pantalla 2](https://github.com/marcosd59/quick-cyber-store/blob/master/src/img/Captura%20de%20pantalla%202024-02-05%20082816.png?raw=true)
+![Captura de Pantalla 1](https://github.com/marcosd59/quick-cyber-store/blob/develop/src/img/Captura%20de%20pantalla%202024-02-05%20082801.png?raw=true)
+![Captura de Pantalla 2](https://github.com/marcosd59/quick-cyber-store/blob/develop/src/img/Captura%20de%20pantalla%202024-02-05%20082816.png?raw=true)
 
 ## Clonar este repositorio
 
