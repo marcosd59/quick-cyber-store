@@ -24,6 +24,7 @@ export default function NavBar() {
   const history = useNavigate();
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: light)");
   const theme = useTheme(); // Acceso al tema actual
+  theme.palette.mode = prefersDarkMode ? "dark" : "light"; // Modo oscuro por defecto
   const [darkMode, setDarkMode] = React.useState(prefersDarkMode); // Estado local para el modo oscuro
   const toggleDarkMode = () => {
     setDarkMode(!darkMode); // Cambiar el estado del modo oscuro
