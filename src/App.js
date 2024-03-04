@@ -12,7 +12,7 @@ import { actionTypes } from "./reducer";
 import Checkout from "./components/checkoutform/Checkout";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       console.log(authUser);
@@ -23,7 +23,7 @@ function App() {
         });
       }
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>
