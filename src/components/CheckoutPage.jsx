@@ -43,7 +43,7 @@ export default function CheckoutPage() {
     return totalPrice.toFixed(2); // Redondear a 2 decimales
   };
 
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
