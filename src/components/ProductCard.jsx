@@ -19,7 +19,7 @@ export default function ProductCard({
 }) {
   const starIcons = Array(Math.floor(rating)).fill(<StarIcon />);
 
-  const [{ basket }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
   const [availableStock, setAvailableStock] = React.useState(stock);
 
   const addToBasket = () => {
