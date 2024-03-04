@@ -13,27 +13,27 @@ import Checkout from "./components/checkoutform/Checkout";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
-  useEffect(()=>{
-    auth.onAuthStateChanged((authUser)=>{
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
       console.log(authUser);
-      if (authUser){
+      if (authUser) {
         dispatch({
           type: actionTypes.SET_USER,
           user: authUser,
-        })
+        });
       }
-    })
-  },[])
+    });
+  }, []);
 
   return (
     <Router>
       <div className="App">
         <NavBar />
         <Routes>
-          <Route path="signup" element={<SignUp/>} />
-          <Route path="/signin" element={<SignIn/>} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/checkout-page" element={<CheckoutPage />} />
-          <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/" element={<Products />} />
         </Routes>
       </div>
