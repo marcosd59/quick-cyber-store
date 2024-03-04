@@ -16,7 +16,7 @@ export default function CheckoutCard({
   product: { id, name, price, rating, stock, description, image },
 }) {
   const starIcons = Array(Math.floor(rating)).fill(<StarIcon />);
-  const [{ basket }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
   const removeItem = () =>
     dispatch({ type: actionTypes.REMOVE_FROM_BASKET, id });
 
