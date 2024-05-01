@@ -25,25 +25,49 @@ function SignUp() {
   const [message, setMessage] = useState("");
   const [severity, setSeverity] = useState("success");
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
+
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
+  };
+
+  const validateEmail = (email) => {
+    const re =
+      /^(([^<>()\\.,;:\s@"]+(\.[^<>()\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const handleEmailChange = (event) => {
+    const emailInput = event.target.value;
+    setEmail(emailInput);
+    setIsEmailValid(validateEmail(emailInput));
+    checkFormValidity();
+  };
+
+  const handlePasswordChange = (event) => {
+    const passwordInput = event.target.value;
+    setPassword(passwordInput);
+    checkFormValidity();
+  };
+
+  const checkFormValidity = () => {
+    setIsFormValid(isEmailValid && password.length > 0);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const data = new FormData(event.currentTarget);
-    const email = data.get("email");
-    const password = data.get("password");
     try {
       await createUserWithEmailAndPassword(auth, email, password).then(
-        (auth) => {
-          console.log(auth);
-          if (auth) {
+        (userCredential) => {
+          console.log(userCredential);
+          if (userCredential) {
             navigate("/");
           }
         }
@@ -89,6 +113,14 @@ function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  error={!isEmailValid && email.length > 0}
+                  helperText={
+                    !isEmailValid && email.length > 0
+                      ? "Invalid email address"
+                      : ""
+                  }
                 />
               </Grid>
               <Grid item xs={12}>
@@ -100,6 +132,8 @@ function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  value={password}
+                  onChange={handlePasswordChange}
                 />
               </Grid>
             </Grid>
@@ -107,6 +141,7 @@ function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
+              disabled={!isFormValid}
               sx={{
                 mt: 3,
                 mb: 2,
@@ -115,13 +150,16 @@ function SignUp() {
                 "&:hover": {
                   backgroundColor: "darken(#212F77, 0.5)",
                 },
+                "&:disabled": {
+                  backgroundColor: "grey",
+                },
               }}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <RouteLink to="/Signin">
+                <RouteLink to="/signin">
                   Already have an account? Sign in
                 </RouteLink>
               </Grid>
