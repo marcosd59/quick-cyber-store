@@ -121,7 +121,7 @@ const productos = [
   {
     id: 12,
     name: "50 Pegatinas De Programación De Tecnología De Software",
-    price: 99.99,
+    price: 14.99,
     stock: 50,
     rating: 5,
     image:
