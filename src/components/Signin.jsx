@@ -33,25 +33,22 @@ function Copyright(props) {
     </Typography>
   );
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
 export default function SignIn() {
   const nav = useNavigate();
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const email = data.get("email");
     const password = data.get("password");
     try {
-      signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       nav("/");
       console.log("Sesión Iniciada Correctamente");
     } catch (error) {
-      console.log("Error Al iniciar Sesión");
+      alert("Usuario o contraseña incorrectos");
     }
   }
 
@@ -67,7 +64,13 @@ export default function SignIn() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "#EBC446" }}>
+          <Avatar
+            sx={{
+              m: 1,
+              bgcolor: "#EBC446",
+              ":hover": { bgcolor: "#EBC446" },
+            }}
+          >
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -112,8 +115,8 @@ export default function SignIn() {
                 mb: 2,
                 backgroundColor: "#212F77",
                 color: "white",
-                "&:hover": {
-                  backgroundColor: "darken(#212F77, 0.5)",
+                ":hover": {
+                  backgroundColor: "darken(#212F77, 90%)",
                 },
               }}
             >
@@ -121,7 +124,16 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link
+                  href="#"
+                  variant="body2"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    alert(
+                      "This feature is not available at the moment. Contact to damian.marcospool@gmail.com to reset your password."
+                    );
+                  }}
+                >
                   Forgot password?
                 </Link>
               </Grid>
