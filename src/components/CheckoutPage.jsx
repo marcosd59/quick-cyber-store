@@ -35,7 +35,6 @@ const Item = styled("div")(({ theme }) => ({
 
 export default function CheckoutPage() {
   const calculateTotalPrice = () => {
-    // Función para calcular el precio total de los productos
     const totalPrice = basket?.reduce(
       (total, product) => total + product.price,
       0
@@ -52,13 +51,13 @@ export default function CheckoutPage() {
           <Typography
             variant="h4"
             style={{
-              fontFamily: "Arial, sans-serif",
+              fontFamily: "sans-serif",
               color: (theme) => theme.palette.text.primary,
               fontSize: "34px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              paddingTop: "50px",
+              paddingTop: "25px",
             }}
           >
             Shopping Cart
