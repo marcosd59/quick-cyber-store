@@ -107,6 +107,9 @@ export default function NavBar() {
                   sx={{
                     color: darkMode ? "white" : "white",
                     backgroundColor: darkMode ? "#EBC446" : "#EBC446",
+                    ":hover": {
+                      backgroundColor: darkMode ? "#800080" : "#800080",
+                    },
                   }}
                 >
                   <strong>{user ? "Sign Out" : "Sign In"}</strong>
