@@ -1,20 +1,17 @@
 const express = require("express");
-const Stripe = require("stripe");
+const serverless = require("@vendia/serverless-express");
 const cors = require("cors");
-const serverlessExpress = require("serverless-express");
+const Stripe = require("stripe");
 require("dotenv").config();
 
 const stripe = new Stripe(process.env.REACT_APP_STRIPE_SECRET_KEY);
-
 const app = express();
 
-app.use(cors({ origin: "https://quick-cyber-store.netlify.app/" }));
+app.use(cors({ origin: "https://quick-cyber-store.netlify.app" }));
 app.use(express.json());
 
 app.post("/api/checkout", async (req, res) => {
-  console.log(req.body);
   const { id, amount, items, names, shippingData } = req.body;
-
   try {
     const payment = await stripe.paymentIntents.create({
       amount,
@@ -28,9 +25,9 @@ app.post("/api/checkout", async (req, res) => {
     console.log(payment);
     return res.status(200).json({ message: "Payment successful" });
   } catch (error) {
+    console.log(error);
     return res.json({ message: error.raw.message });
   }
 });
 
-app.use("/.netlify/functions/index", app);
-export const handler = serverlessExpress(app);
+exports.handler = serverless({ app });
