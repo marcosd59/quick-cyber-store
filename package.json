@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "node functions/index.js && react-scripts start",
-    "build": "netlify deploy --prod",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
