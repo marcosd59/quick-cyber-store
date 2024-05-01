@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.REACT_APP_STRIPE_SECRET_KEY);
 
 const app = express();
 
-app.use(cors({ origin: "https://quick-cyber-store.netlify.app/" }));
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json());
 
 app.post("/api/checkout", async (req, res) => {
@@ -22,7 +22,7 @@ app.post("/api/checkout", async (req, res) => {
       payment_method: id,
       confirm: true,
       payment_method_types: ["card"],
-      return_url: "https://quick-cyber-store.netlify.app/payment-success",
+      return_url: "http://localhost:3000/payment-success",
     });
     console.log(payment);
     return res.status(200).json({ message: "Payment successful" });
@@ -31,5 +31,4 @@ app.post("/api/checkout", async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 3001;
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(3001, () => console.log("Server running on port", 3001));
