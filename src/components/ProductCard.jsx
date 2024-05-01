@@ -49,7 +49,7 @@ export default function ProductCard({
         boxShadow: "lg",
         minHeight: "450px",
         border: "2px solid white",
-        // backgroundColor: "blueGray.50",
+        // backgroundColor: "gray",
       }}
     >
       <CardOverflow>
