@@ -39,22 +39,33 @@ QuickCyber Store es una aplicación de comercio electrónico basada en la web co
 Asegúrate de tener instaladas las siguientes dependencias:
 
 ```json
+"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 "@emotion/react": "^11.11.3",
 "@emotion/styled": "^11.11.0",
 "@mui/icons-material": "^5.15.7",
 "@mui/joy": "^5.0.0-beta.25",
 "@mui/material": "^5.15.7",
 "@mui/styled-engine-sc": "^6.0.0-alpha.14",
+"@stripe/react-stripe-js": "^2.7.0",
+"@stripe/stripe-js": "^3.3.0",
 "@testing-library/jest-dom": "^5.17.0",
 "@testing-library/react": "^13.4.0",
 "@testing-library/user-event": "^13.5.0",
+"@vendia/serverless-express": "^4.12.6",
 "accounting": "^0.4.1",
+"axios": "^1.6.8",
+"cors": "^2.8.5",
+"dotenv": "^16.4.5",
+"express": "^4.19.2",
 "firebase": "^10.8.0",
 "react": "^18.2.0",
 "react-dom": "^18.2.0",
+"react-hook-form": "^7.51.3",
 "react-router-dom": "^6.22.0",
 "react-scripts": "5.0.1",
 "react-uuid": "^2.0.0",
+"serverless-http": "^3.2.0",
+"stripe": "^15.4.0",
 "styled-components": "^6.1.8",
 "web-vitals": "^2.1.4"
 ```
