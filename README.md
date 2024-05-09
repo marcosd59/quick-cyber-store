@@ -78,23 +78,27 @@ Asegúrate de tener instaladas las siguientes dependencias:
 
 ### Carrito de compras
 
-![Carrito de compra](./src/img/screenshots/Shopping%20cart.png)
+![Carrito de compra](./src/img/screenshots/Carrito%20de%20Compras.png)
 
 ### Login
 
-![Login](./src/img/screenshots/Sign%20In.png)
+![Login](./src/img/screenshots/Login.png)
 
 ### Register
 
-![Register](./src/img/screenshots/Sign%20Up.png)
+![Register](./src/img/screenshots/Register.png)
 
-### Checkout
+### Datos de envio
 
-![Checkout](./src/img/screenshots/Checkout.png)
+![Checkout](./src/img/screenshots/Datos%20de%20Envio.png)
 
-### Dark mode
+### Datos de pago
 
-![Dark mode](./src/img/screenshots/Dark%20Mode.png)
+![Datos de Pago](./src/img/screenshots/Datos%20de%20Pago.png)
+
+### Modo oscuro
+
+![Dark mode](./src/img/screenshots/Modo%20Oscuro.png)
 
 ## Clonar este repositorio
 
